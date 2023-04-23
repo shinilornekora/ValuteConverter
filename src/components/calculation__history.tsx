@@ -19,9 +19,9 @@ const CalculationHistory = () => {
         <div className="history__form">
             <div className="noticement">Фильтрация по истории: Исходная валюта - Целевая валюта</div>
             <div className="filter__field">
-                <SelectTool props="filter__from"/>
+                <SelectTool props="filter__from" />
 
-                <SelectTool props="filter__to"/>
+                <SelectTool props="filter__to" />
             </div>
             <div className="table__history">
                 <Convertation props={convHistory}/>

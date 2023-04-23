@@ -12,6 +12,8 @@ function dispatch(state = history, action: any) {
     switch (action.type) {
         case "ADD_TO_HISTORY":
             return {...state, hist: [...state.hist, action?.payload]}
+        case "ACTION__SEE":
+            return {...state, hist: [...state.hist]}
         default:
             return state
     }

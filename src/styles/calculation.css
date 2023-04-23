@@ -1,33 +1,70 @@
-.calculation__form {
-    display: flex;
-    flex-direction: row;
-    gap: 14em;
-    /*border: 1px solid teal;*/
+@media (max-width: 2000px) {
+    .calculation__form {
+        display: flex;
+        flex-direction: row;
+        gap: 14em;
+        /*border: 1px solid teal;*/
+    }
+
+    .first__area {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .second__area {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    select {
+        padding: 5px 10px;
+        border: 1px solid aqua;
+    }
+
+    button {
+        padding: 5px 10px;
+    }
+
+    button:hover {
+        cursor: pointer;
+        padding: 6px 11px;
+    }
+}
+@media (max-width: 630px) {
+    .calculation__form {
+        display: flex;
+        flex-direction: row;
+        gap: 3rem;
+        /*border: 1px solid teal;*/
+    }
+
+    .first__area {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .second__area {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    select {
+        padding: 5px 10px;
+        border: 1px solid aqua;
+    }
+
+    button {
+        padding: 5px 10px;
+    }
+
+    button:hover {
+        cursor: pointer;
+        padding: 6px 11px;
+    }
 }
 
-.first__area {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
-
-.second__area {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
-
-select {
-    padding: 5px 10px;
-    border: 1px solid aqua;
-}
-
-button {
-    padding: 5px 10px;
-}
-
-button:hover {
-    cursor: pointer;
-    padding: 6px 11px;
-}
 

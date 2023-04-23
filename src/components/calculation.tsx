@@ -27,10 +27,7 @@ const Calculation = () => {
                 second_val = Math.round((second / first) * from[0]*1000)/1000;
             }
         }
-
-
-        const date = new Date(); // текущая дата и время
-
+        const date = new Date();
         const options = {
             day: 'numeric',
             month: 'numeric',
@@ -41,15 +38,17 @@ const Calculation = () => {
         };
         // @ts-ignore
         const dateString = date.toLocaleDateString('ru-RU', options);
-        setHistory({
-            type: "ADD_TO_HISTORY", payload: {
-                from: from[1],
-                to: to,
-                first_val: from[0],
-                second_val: second_val,
-                date: dateString,
-            }
-        })
+        if (second_val !== -1) {
+            setHistory({
+                type: "ADD_TO_HISTORY", payload: {
+                    from: from[1],
+                    to: to,
+                    first_val: from[0],
+                    second_val: second_val,
+                    date: dateString,
+                }
+            })
+        }
         setResult(second_val);
     }
 
