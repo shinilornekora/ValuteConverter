@@ -1,24 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+/*
+Разработать SPA с использованием React следующего содаржания:
+Используя курсы валют, доступные по URL https://www.cbr-xml-daily.ru/daily_json.js сделать форму пересчета валют следующего содержания:
+
+1) Область расчета - состоит из полей выбора валют из какой и в какую конвертировать, суммы для конвертации, кнопки выполнения конвертации
+По нажатию на кнопку происходит проверка на правильность заполнения полей, и при удачной проверке - расчет и добавление записи в таблицу из п 2
+2) Область истории  расчетов - состоит из:
+    а) полей выбора валют из какой и в какую конвертировали - при выборе таблица фильтруется по выбранным значениям
+    б) таблицы с историей конвертаций с колонками:
+        - Исходная валюта
+        - Целевая валюта
+        - Сумма в исходной валюте
+        - Сумма в целевой валюте
+        - Дата конвертации в формате дд.мм.гггг чч:мм:сс
+*/
+import Calculation from "./components/calculation";
+import Calculation__history from "./components/calculation__history";
+import './styles/app.css'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Calculation/>
+      <Calculation__history/>
     </div>
   );
 }

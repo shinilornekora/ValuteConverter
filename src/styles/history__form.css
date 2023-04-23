@@ -1,0 +1,21 @@
+.history__form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.filter__field {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 15px;
+}
+
+.table__history {
+    height: 200px;
+    overflow: auto;
+}
+
+.noticement {
+    text-align: center;
+}

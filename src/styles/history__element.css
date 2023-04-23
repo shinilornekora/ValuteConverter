@@ -1,0 +1,23 @@
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 35px;
+}
+
+tr {
+    text-align: center;
+    border-top: 1px solid teal;
+    border-bottom: 1px solid teal;
+}
+
+td {
+    width: 6rem;
+}
+
+table {
+    width: 5vh;
+}
+
+input {
+    padding: 5px 10px;
+}
