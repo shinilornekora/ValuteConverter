@@ -1,17 +1,17 @@
 @media (max-width: 2000px) {
-    .calculation__form {
+    .form {
         display: flex;
         flex-direction: row;
         gap: 14em;
     }
 
-    .first__area {
+    .first {
         display: flex;
         flex-direction: column;
         gap: 5px;
     }
 
-    .second__area {
+    .second {
         display: flex;
         flex-direction: column;
         gap: 5px;
@@ -32,19 +32,19 @@
     }
 }
 @media (max-width: 630px) {
-    .calculation__form {
+    .form {
         display: flex;
         flex-direction: row;
         gap: 3rem;
     }
 
-    .first__area {
+    .first {
         display: flex;
         flex-direction: column;
         gap: 5px;
     }
 
-    .second__area {
+    .second {
         display: flex;
         flex-direction: column;
         gap: 5px;

@@ -6,9 +6,8 @@ import { getNumber } from "../../utils/getValueAsNumber";
 
 import { calculate } from "../../utils/calculate";
 
-import './styles.css';
+import * as css from './styles.css';
 
-// Это какое-то чудовище. Разберу его следующей итерацией.
 export const Calculation = () => {
     const [result, setResult] = useState(0);
     const setHistory = useDispatch();
@@ -28,24 +27,28 @@ export const Calculation = () => {
     }, [])
 
     return (
-        <div className="calculation__form">
-            <div className="first__area">
+        <div className={ css.form }>
+            <div className={ css.first }>
                 <select name="from" id="from__which">
                     <option value="USD">Dollars</option>
                     <option value="RUB">Rubles</option>
                     <option value="JPY">Yens</option>
                     <option value="CNY">Yuan</option>
                 </select>
-                <input type="text" id="from_value" placeholder="Введите количество..."/>
+                <input 
+                    type="text" 
+                    id="from_value" 
+                    placeholder="Введите количество..."
+                />
             </div>
-            <div className="second__area">
+            <div className={ css.second }>
                 <select name="to" id="to__which">
                     <option value="USD">Dollars</option>
                     <option value="RUB">Rubles</option>
                     <option value="JPY">Yens</option>
                     <option value="CNY">Yuan</option>
                 </select>
-                <div className="result">
+                <div className={ css.result }>
                     {result}
                 </div>
                 <button onClick={ doTheMathWork }>
