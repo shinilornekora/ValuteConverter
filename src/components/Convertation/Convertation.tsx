@@ -2,7 +2,7 @@ import React, { Fragment } from "react"
 
 import { makeKey } from "@utils/makeKey";
 
-import { ConvertationType } from '../../types';
+import { ConvertationType } from '@types';
 
 import { default as css } from './styles.m.css';
 

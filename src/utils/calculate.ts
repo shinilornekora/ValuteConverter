@@ -1,4 +1,4 @@
-import { CalculateProps } from "../types";
+import { CalculateProps } from "@types";
 
 export async function calculate({ from, to, setHistory, setResult }: CalculateProps) {
     let second_val;
