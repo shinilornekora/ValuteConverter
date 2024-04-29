@@ -8,7 +8,7 @@ import { getNumber } from "../../utils/getValueAsNumber";
 
 import { calculate } from "../../utils/calculate";
 
-import css from './styles.m.css';
+import { default as css } from './styles.m.css';
 
 export const Calculation = () => {
     const [result, setResult] = useState(0);

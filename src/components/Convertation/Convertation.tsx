@@ -4,7 +4,7 @@ import { makeKey } from "../../utils/makeKey";
 
 import { ConvertationType } from '../../types';
 
-import css from './styles.m.css';
+import { default as css } from './styles.m.css';
 
 type Props = {
     history: Array<ConvertationType>;
