@@ -3,7 +3,6 @@
         display: flex;
         flex-direction: row;
         gap: 14em;
-        /*border: 1px solid teal;*/
     }
 
     .first__area {
@@ -37,7 +36,6 @@
         display: flex;
         flex-direction: row;
         gap: 3rem;
-        /*border: 1px solid teal;*/
     }
 
     .first__area {

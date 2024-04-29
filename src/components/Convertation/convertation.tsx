@@ -1,8 +1,12 @@
 import React from "react"
+
 import '../styles/history__element.css'
-const Convertation = (...props: any[]) => {
+
+export const Convertation = (...props: any[]) => {
     const result = []
     setTimeout(() => 1, 1000)
+
+    // Господь, почему здесь столько прямых обращений к пропсам
     for (let i = 0; i < props[0].props.length; i++) {
         let e = props[0].props[i]
         result.push(
@@ -30,5 +34,3 @@ const Convertation = (...props: any[]) => {
             </table>
         </React.Fragment>);
 };
-
-export default Convertation;

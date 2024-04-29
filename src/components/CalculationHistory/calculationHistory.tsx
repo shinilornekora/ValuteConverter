@@ -1,9 +1,10 @@
-import Convertation from "./convertation";
-import {useSelector} from "react-redux";
-import SelectTool from "./selectTool"
-import '../styles/history__form.css'
+import { Convertation } from "../Convertation/convertation";
+import { useSelector } from "react-redux";
+import { SelectTool } from "../selectTool"
 
-const CalculationHistory = () => {
+import './styles.css'
+
+export const CalculationHistory = () => {
     function getVal(tag: string) {
         let data = document.querySelector(`${tag}`) as HTMLSelectElement
         return data?.value
@@ -29,5 +30,3 @@ const CalculationHistory = () => {
         </div>
     );
 };
-
-export default CalculationHistory;

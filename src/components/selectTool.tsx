@@ -1,10 +1,15 @@
-import React from 'react';
-import {useDispatch} from "react-redux";
+import { useCallback } from "react";
+import { useDispatch } from "react-redux";
 
-const SelectTool = (props: any) => {
+export const SelectTool = (props: any) => {
     const setHistory = useDispatch()
+
+    const handleAction = useCallback(() => setHistory({ 
+        type: "ACTION_SEE", hist: {} 
+    }), [setHistory])
+
     return (
-        <select id={props.props} onChange={() => setHistory({type: "ACTION__SEE", hist: {}})}>
+        <select id={ props.props } onChange={ handleAction }>
             <option value="None">Выбрать...</option>
             <option value="USD">Dollars</option>
             <option value="RUB">Rubles</option>
@@ -13,5 +18,3 @@ const SelectTool = (props: any) => {
         </select>
     );
 };
-
-export default SelectTool;

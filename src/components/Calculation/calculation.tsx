@@ -1,6 +1,7 @@
-import '../styles/calculation.css'
 import { useState } from "react";
 import { useDispatch } from "react-redux";
+
+import './styles.css';
 
 const Calculation = () => {
     const [result, setResult] = useState(0);
