@@ -7,7 +7,7 @@ import { getVal } from "@utils/getTagValue";
 import { calculate } from "@utils/calculate";
 import { getNumber } from "@utils/getValueAsNumber";
 
-import { default as css } from './styles.module.css';
+import * as css from './styles.module.css';
 
 export const Calculation = () => {
     const [result, setResult] = useState(0);
@@ -49,7 +49,7 @@ export const Calculation = () => {
                     <option value="JPY">Yens</option>
                     <option value="CNY">Yuan</option>
                 </select>
-                <div className={ css.result }>
+                <div className="result">
                     {result}
                 </div>
                 <button onClick={ doTheMathWork }>
