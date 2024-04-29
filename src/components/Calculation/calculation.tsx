@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 
 import './styles.css';
 
+// Это какое-то чудовище. Разберу его следующей итерацией.
 const Calculation = () => {
     const [result, setResult] = useState(0);
     const setHistory = useDispatch();

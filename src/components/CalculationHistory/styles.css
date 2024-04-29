@@ -1,18 +1,18 @@
 @media (max-width: 2000px) {
-    .history__form {
+    .history {
         display: flex;
         flex-direction: column;
         gap: 15px;
     }
 
-    .filter__field {
+    .filter {
         display: flex;
         flex-direction: row;
         justify-content: center;
         gap: 75px;
     }
 
-    .table__history {
+    .table {
         height: 200px;
         overflow: auto;
     }
@@ -23,20 +23,20 @@
 }
 
 @media (max-width: 630px) {
-    .history__form {
+    .history {
         display: flex;
         flex-direction: column;
         gap: 15px;
     }
 
-    .filter__field {
+    .filter {
         display: flex;
         flex-direction: row;
         justify-content: center;
         gap: 15px;
     }
 
-    .table__history {
+    .table {
         height: 200px;
         overflow: auto;
     }
