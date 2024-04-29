@@ -1,7 +1,12 @@
+import React from "react";
 import { useCallback } from "react";
 import { useDispatch } from "react-redux";
 
-export const SelectTool = (props: any) => {
+type Props = {
+    tag: string;
+}
+
+export const SelectTool: React.FC<Props> = ({ tag }) => {
     const setHistory = useDispatch()
 
     const handleAction = useCallback(() => setHistory({ 
@@ -9,7 +14,7 @@ export const SelectTool = (props: any) => {
     }), [setHistory])
 
     return (
-        <select id={ props.props } onChange={ handleAction }>
+        <select id={ tag } onChange={ handleAction }>
             <option value="None">Выбрать...</option>
             <option value="USD">Dollars</option>
             <option value="RUB">Rubles</option>

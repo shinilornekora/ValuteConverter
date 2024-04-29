@@ -9,6 +9,7 @@ const Calculation = () => {
 
     async function calculate(from: [number | undefined, string], to: string) {
         let second_val;
+
         if (from[0] === undefined || from[0] < 0) {
             second_val = -1;
         } else if (from[0] === 0) {
@@ -16,6 +17,7 @@ const Calculation = () => {
         } else {
             let data = await fetch('https://www.cbr-xml-daily.ru/daily_json.js')
                 .then(value => value.json()).then(value => value)
+                
             if (from[1] === "RUB" && to === "RUB")
                 second_val = from[0];
             else if (from[1] === "RUB")
@@ -23,12 +25,14 @@ const Calculation = () => {
             else if (to === "RUB")
                 second_val = from[0] * (data?.Valute[from[1]]["Value"] / data?.Valute[from[1]]["Nominal"]);
             else {
-                let first = 1 / (data?.Valute[from[1]]["Value"] / data?.Valute[from[1]]["Nominal"])
-                let second = 1 / (data?.Valute[to]["Value"] / data?.Valute[to]["Nominal"])
-                second_val = Math.round((second / first) * from[0]*1000)/1000;
+                const first = 1 / (data?.Valute[from[1]]["Value"] / data?.Valute[from[1]]["Nominal"])
+                const second = 1 / (data?.Valute[to]["Value"] / data?.Valute[to]["Nominal"])
+
+                second_val = Math.round((second / first) * from[0]*1000) / 1000;
             }
         }
         const date = new Date();
+
         const options = {
             day: 'numeric',
             month: 'numeric',
@@ -37,8 +41,10 @@ const Calculation = () => {
             minute: 'numeric',
             second: 'numeric',
         };
-        // @ts-ignore
+
+        // @ts-expect-error: требует типа, которого просто нельзя найти
         const dateString = date.toLocaleDateString('ru-RU', options);
+
         if (second_val !== -1) {
             setHistory({
                 type: "ADD_TO_HISTORY", payload: {

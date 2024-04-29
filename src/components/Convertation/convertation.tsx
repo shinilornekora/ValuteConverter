@@ -1,6 +1,6 @@
-import React from "react"
+import { Fragment } from "react"
 
-import '../styles/history__element.css'
+import './styles.css'
 
 export const Convertation = (...props: any[]) => {
     const result = []
@@ -21,7 +21,7 @@ export const Convertation = (...props: any[]) => {
     }
 
     return (
-        <React.Fragment>
+        <Fragment>
             <table cellSpacing="0" cellPadding="8">
                 <tr key={0} className="wrapper">
                     <td>Исходная валюта</td>
@@ -32,5 +32,5 @@ export const Convertation = (...props: any[]) => {
                 </tr>
                 {result.reverse()}
             </table>
-        </React.Fragment>);
+        </Fragment>);
 };
