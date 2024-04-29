@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { Calculation } from "./components/Calculation/calculation";
 import { CalculationHistory } from "./components/CalculationHistory/calculationHistory";
 

@@ -1,10 +1,10 @@
-import { Fragment } from "react"
+import React, { Fragment } from "react"
 
 import { makeKey } from "../../utils/makeKey";
 
 import { ConvertationType } from '../../types';
 
-import * as css from './styles.m.css';
+import css from './styles.m.css';
 
 type Props = {
     history: Array<ConvertationType>;

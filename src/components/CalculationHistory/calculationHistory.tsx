@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { Convertation } from "../Convertation/convertation";
 import { useSelector } from "react-redux";
 import { SelectTool } from "../selectTool"
