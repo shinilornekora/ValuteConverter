@@ -1,4 +1,4 @@
-import Calculation from "./components/Calculation/calculation";
+import { Calculation } from "./components/Calculation/calculation";
 import { CalculationHistory } from "./components/CalculationHistory/calculationHistory";
 
 import './styles/app.css'

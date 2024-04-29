@@ -2,18 +2,11 @@ import { Fragment } from "react"
 
 import { makeKey } from "../../utils/makeKey";
 
+import { ConvertationType } from '../../types';
 import './styles.css'
 
-type Convertation = {
-    from: string;
-    to: string;
-    first_val: string | number;
-    second_val: string | number;
-    date: any;
-};
-
 type Props = {
-    history: Array<Convertation>;
+    history: Array<ConvertationType>;
 };
 
 export const Convertation: React.FC<Props> = ({ history }) => {
