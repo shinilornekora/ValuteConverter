@@ -1,6 +1,6 @@
 import React, { Fragment } from "react"
 
-import { makeKey } from "../../utils/makeKey";
+import { makeKey } from "@utils/makeKey";
 
 import { ConvertationType } from '../../types';
 

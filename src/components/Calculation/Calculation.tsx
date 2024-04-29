@@ -3,10 +3,9 @@ import React from 'react';
 import { useCallback, useState } from "react";
 import { useDispatch } from "react-redux";
 
-import { getVal } from "../../utils/getTagValue";
-import { getNumber } from "../../utils/getValueAsNumber";
-
-import { calculate } from "../../utils/calculate";
+import { getVal } from "@utils/getTagValue";
+import { calculate } from "@utils/calculate";
+import { getNumber } from "@utils/getValueAsNumber";
 
 import { default as css } from './styles.m.css';
 

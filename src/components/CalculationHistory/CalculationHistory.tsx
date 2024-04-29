@@ -1,10 +1,10 @@
 import React from 'react';
 
-import { Convertation } from "../Convertation/convertation";
+import { Convertation } from "../Convertation";
 import { useSelector } from "react-redux";
 import { SelectTool } from "../selectTool"
 
-import { calculationsCheck } from "../../utils/calculationsCheck";
+import { calculationsCheck } from "@utils/calculationsCheck";
 
 import { default as css } from "./styles.m.css";
 
