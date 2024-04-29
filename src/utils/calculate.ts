@@ -1,32 +1,13 @@
 import { CalculateProps } from "@types";
 
+const apiUrl = 'https://www.cbr-xml-daily.ru/daily_json.js'
+
 export async function calculate({ from, to, setHistory, setResult }: CalculateProps) {
-    let second_val;
+    const secondVal = await _calculateHelper(from, to);
 
-    if (from[0] === undefined || from[0] < 0) {
-        second_val = -1;
-    } else if (from[0] === 0) {
-        second_val = 0
-    } else {
-        let data = await fetch('https://www.cbr-xml-daily.ru/daily_json.js')
-            .then(value => value.json()).then(value => value)
-            
-        if (from[1] === "RUB" && to === "RUB")
-            second_val = from[0];
-        else if (from[1] === "RUB")
-            second_val = from[0] * (1 / (data?.Valute[to]["Value"] / data?.Valute[to]["Nominal"]));
-        else if (to === "RUB")
-            second_val = from[0] * (data?.Valute[from[1]]["Value"] / data?.Valute[from[1]]["Nominal"]);
-        else {
-            const first = 1 / (data?.Valute[from[1]]["Value"] / data?.Valute[from[1]]["Nominal"])
-            const second = 1 / (data?.Valute[to]["Value"] / data?.Valute[to]["Nominal"])
-
-            second_val = Math.round((second / first) * from[0]*1000) / 1000;
-        }
-    }
     const date = new Date();
 
-    const options = {
+    const options: Intl.DateTimeFormatOptions = {
         day: 'numeric',
         month: 'numeric',
         year: 'numeric',
@@ -35,19 +16,52 @@ export async function calculate({ from, to, setHistory, setResult }: CalculatePr
         second: 'numeric',
     };
 
-    // @ts-expect-error: требует типа, которого просто нельзя найти
     const dateString = date.toLocaleDateString('ru-RU', options);
 
-    if (second_val !== -1) {
+    if (secondVal !== -1) {
         setHistory({
             type: "ADD_TO_HISTORY", payload: {
                 from: from[1],
                 to: to,
                 first_val: from[0]!,
-                second_val: second_val,
+                second_val: secondVal,
                 date: dateString,
             }
         })
     }
-    setResult(second_val);
+
+    setResult(secondVal);
+}
+
+/**
+ * Функция-хелпер, инкапсулирует логику подсчета результата.
+ * Вроде бы учел все corner-кейсы, но может что-то и просочится.
+ */
+async function _calculateHelper(from: [number | undefined, string ], to: string) {
+    if (from[0] === undefined || from[0] < 0) {
+        return -1;
+    }
+
+    if (from[0] === 0) {
+        return 0;
+    }
+
+    if (from[1] === "RUB" && to === "RUB") {
+        return from[0];
+    }
+
+    const data = await fetch(apiUrl).then(value => value.json());
+
+    if (from[1] === "RUB" ) {
+        return from[0] * (1 / (data?.Valute[to]["Value"] / data?.Valute[to]["Nominal"]));
+    }
+
+    if (to === "RUB") {
+        return from[0] * (data?.Valute[from[1]]["Value"] / data?.Valute[from[1]]["Nominal"]);
+    }
+
+    const first = 1 / (data?.Valute[from[1]]["Value"] / data?.Valute[from[1]]["Nominal"])
+    const second = 1 / (data?.Valute[to]["Value"] / data?.Valute[to]["Nominal"])
+
+    return Math.round((second / first) * from[0]*1000) / 1000;
 }
