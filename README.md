@@ -1,7 +1,8 @@
 # ValuteCourse - React SPA приложение.
 
 ### Основная цель: 
-- Cделать форму пересчета валют с использованием API центробанка - https://www.cbr-xml-daily.ru/daily_json.js
+- Cделать форму пересчета валют с использованием API центробанка:
+  https://www.cbr-xml-daily.ru/daily_json.js
 
 ### Основные пункты UI & UX:
 
@@ -24,3 +25,10 @@
 npm ci
 npm start
 ```
+
+### Использованный стек
+- Webpack 5
+- React 18
+- Redux
+- Css-modules
+- Typescript

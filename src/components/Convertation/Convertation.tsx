@@ -30,14 +30,18 @@ export const Convertation: React.FC<Props> = ({ history }) => {
     return (
         <Fragment>
             <table cellSpacing="0" cellPadding="8">
-                <tr key={ Math.random() } className={ css.wrapper }>
-                    <td>Исходная валюта</td>
-                    <td>Целевая валюта</td>
-                    <td>Сумма в исходной валюте</td>
-                    <td>Сумма в целевой валюте</td>
-                    <td>Дата конвертации</td>
-                </tr>
-                { result.reverse() }
+                <thead>
+                    <tr key={ Math.random() } className={ css.wrapper }>
+                        <td>Исходная валюта</td>
+                        <td>Целевая валюта</td>
+                        <td>Сумма в исходной валюте</td>
+                        <td>Сумма в целевой валюте</td>
+                        <td>Дата конвертации</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    { result.reverse() }
+                </tbody>
             </table>
         </Fragment>);
 };

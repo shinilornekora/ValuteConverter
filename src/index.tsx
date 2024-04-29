@@ -15,6 +15,7 @@ function dispatch(state = history, action: any) {
         case "ADD_TO_HISTORY":
             return {...state, hist: [...state.hist, action?.payload]}
         case "ACTION__SEE":
+            console.log("I WAS TRIGGERED!")
             return {...state, hist: [...state.hist]}
         default:
             return state

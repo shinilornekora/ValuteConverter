@@ -11,7 +11,7 @@ export const SelectTool: React.FC<Props> = ({ tag }) => {
     const setHistory = useDispatch()
 
     const handleAction = useCallback(() => setHistory({ 
-        type: "ACTION_SEE", hist: {} 
+        type: "ACTION__SEE", hist: {} 
     }), [setHistory])
 
     return (

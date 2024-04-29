@@ -3,7 +3,7 @@ import React from 'react';
 import { Calculation } from "./components/Calculation/Calculation";
 import { CalculationHistory } from "./components/CalculationHistory/CalculationHistory";
 
-import './styles/app.css'
+import './app.css'
 
 export const App = () => {
     return (
