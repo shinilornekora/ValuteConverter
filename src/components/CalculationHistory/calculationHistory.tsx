@@ -4,7 +4,7 @@ import { SelectTool } from "../selectTool"
 
 import { calculationsCheck } from "../../utils/calculationsCheck";
 
-import * as css from './styles.css';
+import css from './styles.m.css';
 
 export const CalculationHistory = () => {
     const history = useSelector((state: any) => state.hist).filter(calculationsCheck)

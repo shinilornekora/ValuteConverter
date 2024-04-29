@@ -4,7 +4,7 @@ import { makeKey } from "../../utils/makeKey";
 
 import { ConvertationType } from '../../types';
 
-import './styles.css'
+import * as css from './styles.m.css';
 
 type Props = {
     history: Array<ConvertationType>;
@@ -17,7 +17,7 @@ export const Convertation: React.FC<Props> = ({ history }) => {
 
     history.forEach((action) => {
         result.push(
-            <tr key={ makeKey(action) } className="wrapper">
+            <tr key={ makeKey(action) } className={ css.wrapper }>
                 <td className="first__valute">{ action.from }</td>
                 <td className="second__valute">{ action.to }</td>
                 <td className="first__valute__amount">{ action.first_val }</td>
@@ -30,7 +30,7 @@ export const Convertation: React.FC<Props> = ({ history }) => {
     return (
         <Fragment>
             <table cellSpacing="0" cellPadding="8">
-                <tr key={ Math.random() } className="wrapper">
+                <tr key={ Math.random() } className={ css.wrapper }>
                     <td>Исходная валюта</td>
                     <td>Целевая валюта</td>
                     <td>Сумма в исходной валюте</td>
