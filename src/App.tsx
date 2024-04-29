@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { Calculation } from "./components/Calculation/Сalculation";
-import { CalculationHistory } from "./components/CalculationHistory/СalculationHistory";
+import { Calculation } from "./components/Calculation/Calculation";
+import { CalculationHistory } from "./components/CalculationHistory/CalculationHistory";
 
 import './styles/app.css'
 
