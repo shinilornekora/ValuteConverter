@@ -1,25 +1,23 @@
-@media (max-width: 2000px) {
-    .history {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-    }
+.history {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
 
-    .filter {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        gap: 75px;
-    }
+.filter {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 75px;
+}
 
-    .table {
-        height: 200px;
-        overflow: auto;
-    }
+.table {
+    height: 200px;
+    overflow: auto;
+}
 
-    .noticement {
-        text-align: center;
-    }
+.noticement {
+    text-align: center;
 }
 
 @media (max-width: 630px) {
