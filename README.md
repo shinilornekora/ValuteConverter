@@ -30,5 +30,6 @@ npm start
 - Webpack 5
 - React 18
 - Redux
+- RX.js
 - Css-modules
 - Typescript
