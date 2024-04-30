@@ -3,7 +3,7 @@ export type ConvertationType = {
     to: string;
     first_val: string | number;
     second_val: string | number;
-    date: any;
+    date: Date;
 };
 
 export type ConvertAction = {
@@ -18,3 +18,6 @@ export type CalculateProps = {
     setResult: (value: number) => void;
 }
 
+export type StoreState = {
+    hist: Array<ConvertationType>;
+}

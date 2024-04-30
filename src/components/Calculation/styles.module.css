@@ -19,15 +19,28 @@
 select {
     padding: 5px 10px;
     border: 1px solid aqua;
+    background-color: #fff;
+}
+
+select:hover {
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.1)
 }
 
 button {
     padding: 5px 10px;
+    background-color: #fff;
+    border: 1px solid aqua
 }
 
 button:hover {
     cursor: pointer;
-    padding: 6px 11px;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+input {
+    border: 1px solid aqua;
+    background: #fff;
 }
 
 @media (max-width: 630px) {
@@ -52,15 +65,6 @@ button:hover {
     select {
         padding: 5px 10px;
         border: 1px solid aqua;
-    }
-
-    button {
-        padding: 5px 10px;
-    }
-
-    button:hover {
-        cursor: pointer;
-        padding: 6px 11px;
     }
 }
 

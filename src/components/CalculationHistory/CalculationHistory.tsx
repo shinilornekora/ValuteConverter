@@ -6,10 +6,12 @@ import { SelectTool } from "../selectTool"
 
 import { calculationsCheck } from "@utils/calculationsCheck";
 
+import { StoreState } from '@types';
+
 import * as css from "./styles.module.css";
 
 export const CalculationHistory = () => {
-    const history = useSelector((state: any) => state.hist).filter(calculationsCheck)
+    const history = useSelector((state: StoreState) => state.hist).filter(calculationsCheck)
 
     return (
         <div className={ css.history }>

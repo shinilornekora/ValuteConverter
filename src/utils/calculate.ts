@@ -1,6 +1,6 @@
 import { CalculateProps } from '@types';
 import { from as _from, of } from 'rxjs';
-import { catchError, map, switchMap } from 'rxjs/operators';
+import { catchError, switchMap } from 'rxjs/operators';
 
 const apiUrl = 'https://www.cbr-xml-daily.ru/daily_json.js';
 

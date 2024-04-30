@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import { useCallback, useState } from "react";
 import { useDispatch } from "react-redux";
@@ -8,11 +8,22 @@ import { calculate } from "@utils/calculate";
 import { getNumber } from "@utils/getValueAsNumber";
 
 import * as css from './styles.module.css';
+import { ErrorWidget } from '../ErrorWidget';
 
 export const Calculation = () => {
     const [result, setResult] = useState(0);
+    const [isError, setError] = useState(false);
+
     const setHistory = useDispatch();
 
+    useEffect(() => {
+        if (result === -1) {
+            setError(true);
+            return;
+        }
+
+        setError(false);
+    }, [result, setError]);
 
     const doTheMathWork = useCallback(() => {
         const helper = async () => {
@@ -56,6 +67,7 @@ export const Calculation = () => {
                     Рассчитать!
                 </button>
             </div>
+            { isError && <ErrorWidget message="Invalid input value." /> }
         </div>
     );
 };

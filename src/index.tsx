@@ -1,35 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
+import { Provider } from "react-redux";
+import { store } from './store';
+
 import { App } from './App';
 
-import { createStore } from "redux";
-import { Provider } from "react-redux";
+import './index.module.css';
 
-const history = {
-    hist: []
-}
+const root = document.getElementById('root') as HTMLElement
 
-function dispatch(state = history, action: any) {
-    switch (action.type) {
-        case "ADD_TO_HISTORY":
-            return {...state, hist: [...state.hist, action?.payload]}
-        case "ACTION__SEE":
-            return {...state, hist: [...state.hist]}
-        default:
-            return state
-    }
-}
-
-// @ts-expect-error: стор не принимает диспатч потому что устарел?
-const store = createStore(dispatch)
-
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
-);
-
-root.render(
-    <Provider store={store}>
+ReactDOM.createRoot(root).render(
+    <Provider store={ store }>
         <App />
     </Provider>
 );
