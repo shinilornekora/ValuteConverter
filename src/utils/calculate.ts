@@ -28,6 +28,7 @@ export function calculate({ from, to, setHistory, setResult }: CalculateProps) {
                         to: to,
                         first_val: from[0]!,
                         second_val: secondVal,
+                        // @ts-expect-error: даты, странная типизация
                         date: dateString,
                     }
                 });
