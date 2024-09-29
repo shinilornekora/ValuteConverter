@@ -31,5 +31,5 @@ npm start
 - React 18
 - Redux
 - RX.js
-- Css-modules
+- CSS-modules
 - Typescript
